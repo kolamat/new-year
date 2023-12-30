@@ -10,7 +10,7 @@ function setup() {
   ctx = canvas.getcontext("2d");
   ctx.fillstyle = "#000000";
   ctx.fillRect(0, 0, width, height);
-  fireworks.push(new Firewors(math.random() * (width - 200) + 100));
+  fireworks.push(new Firewors(Math.random() * (width - 200) + 100));
   window.addEventListener("resize", windowResized);
   document.addEventListener("click", onclick);
 }
@@ -33,6 +33,29 @@ function loop() {
     particles[i].draw();
     if (particles[i].lifetime > 80) particles.splice(i, 1);
   }
-  if (math.random() < 1 / 60)
-    fireworks.push(new fireworks(math.random() * (width - 200) + 100));
+  if (Math.random() < 1 / 60)
+    fireworks.push(new fireworks(Math.random() * (width - 200) + 100));
+}
+
+class Particles {
+  constructor(x, y, col) {
+    this.x = x;
+    this.y = y;
+    this.col = col;
+    this.vel = randomVec(2);
+    this.lifetime = 0;
+  }
+  update() {
+    this.x += this.vel.x;
+    this.y += this.vel.y;
+    this.vel.y += 0.02;
+    this.vel.x *= 0.99;
+    this.vel.y *= 0.99;
+    this.lifetime++;
+  }
+  draw() {
+    ctx.globalAlpha = Math.max(1 - this.lifetime / 80, 0);
+    ctx.fillstyle = this.col;
+    ctx.fillRect(this.x, this.y, 2, 2);
+  }
 }
