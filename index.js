@@ -38,7 +38,7 @@ function loop() {
 }
 
 setInterval(loop, 1000 / 60);
-class Particles {
+class Particle {
   constructor(x, y, col) {
     this.x = x;
     this.y = y;
