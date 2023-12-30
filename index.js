@@ -37,6 +37,7 @@ function loop() {
     fireworks.push(new fireworks(Math.random() * (width - 200) + 100));
 }
 
+setInterval(loop, 1000 / 60);
 class Particles {
   constructor(x, y, col) {
     this.x = x;
