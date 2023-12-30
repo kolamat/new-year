@@ -88,5 +88,11 @@ function randomCol() {
   let letter = "0123456789ABCDEF";
   let nums = [];
 
-  for (let i = 0; i < 3; i++) {}
+  for (let i = 0; i < 3; i++) {
+    nums[i] = Math.floor(Math.random() * 256);
+  }
+  let brightest = 0;
+  for (let i = 0; i < 3; i++) {
+    if (brightest < num[i]) brightest = nums[i];
+  }
 }
