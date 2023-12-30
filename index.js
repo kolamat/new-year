@@ -104,4 +104,5 @@ function randomCol() {
     color += letter[Math.floor(nums[i] / 16)];
     color += letter[Math.floor(nums[i] % 16)];
   }
+  return color;
 }
