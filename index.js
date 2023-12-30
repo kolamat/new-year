@@ -95,4 +95,13 @@ function randomCol() {
   for (let i = 0; i < 3; i++) {
     if (brightest < num[i]) brightest = nums[i];
   }
+  brightest /= 255;
+  for (let i = 0; i < 3; i++) {
+    nums[i] /= brightest;
+  }
+  let color = "#";
+  for (let i = 0; i < 3; i++) {
+    color += letter[Math.floor(nums[i] / 16)];
+    color += letter[Math.floor(nums[i] % 16)];
+  }
 }
