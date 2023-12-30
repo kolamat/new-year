@@ -106,3 +106,31 @@ function randomCol() {
   }
   return color;
 }
+
+function randomVec(max) {
+  let dir = Math.random() * Math.PI * 2;
+  let spd = Math.random() * max;
+  return { x: Math.cos(dir) * spd, y: Math.sin(dir) * spd };
+}
+function setSize(canv) {
+  canv.style.width = innerWidth + "px";
+  canv.style.height = innerHeight + "px";
+  width = innerWidth;
+  height = innerHeight;
+
+  canv.width = innerWidth * window.devicePixelRatio;
+  canv.height = innerHeight * window.devicePixelRatio;
+  canvas
+    .getcontext("2d")
+    .scale(window.devicePixelRatio, window.devicePixelRatio);
+}
+
+function onClick(e) {
+  fireworks.push(new Firework(e.clientX));
+}
+
+function windowResized() {
+  setSize(canvas);
+  ctx.fillstyle = "#000000";
+  ctx.fillRect(0, 0, width, height);
+}
