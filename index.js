@@ -75,7 +75,7 @@ class Firework {
         particles.push(new Particles(this.x, this.y, this.col));
       }
     }
-    return isBlown;
+    return this.isBlown;
   }
   draw() {
     ctx.globalAlpha = 1;
