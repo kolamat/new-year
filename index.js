@@ -30,6 +30,9 @@ function loop() {
   }
   for (let i = 0; i < particles.length; i++) {
     particles[i].update();
-    particles[i];
+    particles[i].draw();
+    if (particles[i].lifetime > 80) particles.splice(i, 1);
   }
+  if (math.random() < 1 / 60)
+    fireworks.push(new fireworks(math.random() * (width - 200) + 100));
 }
