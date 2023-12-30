@@ -73,7 +73,7 @@ class Firework {
     if (this.y < 350 - Math.sqrt(Math.random() * 500) * 40) {
       this.isBlown = true;
       for (let i = 0; i < 60; i++) {
-        particles.push(new Particles(this.x, this.y, this.col));
+        particles.push(new Particle(this.x, this.y, this.col));
       }
     }
     return this.isBlown;
