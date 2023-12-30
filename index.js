@@ -59,3 +59,31 @@ class Particles {
     ctx.fillRect(this.x, this.y, 2, 2);
   }
 }
+
+class Firework {
+  constructor(x) {
+    this.x = x;
+    this.y = height;
+    this.isBlown = false;
+    this.col = randomCol();
+  }
+  update() {
+    this.y -= 3;
+    if (this.y < 350 - Math.sqrt(Math.random() * 500) * 40) {
+      this.isBlown = true;
+      for (let i = 0; i < 60; i++) {
+        particles.push(new Particles(this.x, this.y, this.col));
+      }
+    }
+    return isBlown;
+  }
+  draw() {
+    ctx.globalAlpha = 1;
+    ctx.fillstyle = this.col;
+    ctx.fillRect(this.x, this.y, 2, 2);
+  }
+}
+
+function randomCol() {
+  var letter = "";
+}
