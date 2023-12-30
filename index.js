@@ -85,5 +85,8 @@ class Firework {
 }
 
 function randomCol() {
-  var letter = "";
+  let letter = "0123456789ABCDEF";
+  let nums = [];
+
+  for (let i = 0; i < 3; i++) {}
 }
