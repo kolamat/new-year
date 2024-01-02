@@ -6,9 +6,7 @@ function addElement() {
 
   // and give it some content
   const newContent = document.createTextNode(
-    setTimeout(() => {
-      "Hi there my name is Kolade matanmi an a frontend engineer!";
-    }, 2000)
+    "Hi there my name is Kolade matanmi an a frontend engineer!"
   );
 
   // add the text node to the newly created div
