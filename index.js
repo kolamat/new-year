@@ -19,5 +19,5 @@ function addElement() {
   // add the newly created element and its content into the DOM
   const currentH1 = document.getElementById("h1");
   const secondH1 = document.getElementById("h1");
-  document.body.insertBefore(newh1, currentH1);
+  document.body.insertBefore(newh1, currentH1, secondH1);
 }
