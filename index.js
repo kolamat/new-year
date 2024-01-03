@@ -1,6 +1,6 @@
 document.body.onload = addElement;
 
-function addElement() {
+setTimeout(function addElement() {
   // create a new div element
   const newh1 = document.createElement("h1");
 
@@ -15,4 +15,4 @@ function addElement() {
   // add the newly created element and its content into the DOM
   const currentH1 = document.getElementById("h1");
   document.body.insertBefore(newh1, currentH1);
-}
+}, 2000);
